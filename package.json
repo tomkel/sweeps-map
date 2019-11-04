@@ -1,8 +1,8 @@
 {
-  "name": "vis-sweeps",
+  "name": "sweeps-map",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:tomkel/vis-sweeps.git",
+  "repository": "git@github.com:tomkel/sweeps-map.git",
   "author": "Tommy Kelly <git@tkel.ly>",
   "license": "AGPL-3.0-or-later",
   "dependencies": {

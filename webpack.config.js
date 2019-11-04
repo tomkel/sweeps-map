@@ -3,9 +3,7 @@ const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
-  entry: {
-    main: './src/main.js',
-  },
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',

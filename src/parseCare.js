@@ -1,4 +1,4 @@
-import pdfjsLib from 'pdfjs-dist'
+import pdfjsLib from 'pdfjs-dist/webpack'
 // import R from 'ramda'
 
 const url = 'https://cdn.glitch.com/6be5b6e9-3e78-4f26-91f9-ac968b43d306%2FCARE%20Program%20Confirmation%20Sheet%2010.11.pdf'

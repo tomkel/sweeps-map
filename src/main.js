@@ -1,6 +1,6 @@
 import L from 'leaflet'
 import { BingProvider } from 'leaflet-geosearch'
-import './parseCare'
+import parse from './parseCare'
 
 const log = (...args) => {
   if (process.env.NODE === 'development') {
@@ -11,8 +11,16 @@ const log = (...args) => {
 
 // const container = DOM.element('div', { style: `width:${width}px;height:${width / 1.6}px` })
 
+// const mapEl = document.createElement('div')
+// mapEl.id = 'map'
+// mapEl.style.height = '500px'
+// document.body.appendChild(mapEl)
+
+
+const pdfEl = document.querySelector('#pdf')
 const mapEl = document.querySelector('#map')
-const map = L.map('map').setView([34.0536909, -118.2427666]).setZoom(13)
+const map = L.map(mapEl).setView([34.0536909, -118.2427666]).setZoom(13)
+
 
 L.tileLayer(
   'https://api.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}',
@@ -55,7 +63,15 @@ const geocode = (address) => {
   })
 }
 
-const validAddress = (address) => /\d{5}$/.test(address)
+
+// const url = 'https://cdn.glitch.com/6be5b6e9-3e78-4f26-91f9-ac968b43d306%2FCARE%20Program%20Confirmation%20Sheet%2010.11.pdf'
+
+const archiveUrl = 'https://ia601508.us.archive.org/22/items/lasanitationencampmentsweepconfirmationsheets/CARE%2B%20Program%20Confirmation%20Sheet%2011.5.pdf'
+const noCors = 'https://cors-anywhere.herokuapp.com/'
+
+parse(noCors + archiveUrl)
+pdfEl.src = archiveUrl
+
 
 /*
 let layerGroup

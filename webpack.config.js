@@ -1,6 +1,7 @@
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 const config = {
   entry: './src/main.js',
@@ -11,7 +12,10 @@ const config = {
   },
   plugins: [
     new Dotenv(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({ template: 'src/index.html' }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer',
+    }),
   ],
 }
 
